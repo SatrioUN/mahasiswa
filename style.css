@@ -1,0 +1,234 @@
+/* --- Tambahkan ini di <head> HTML Anda jika ingin menggunakan font Poppins --- */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+*/
+
+body {
+    /* Menggunakan Poppins, dengan fallback ke font sans-serif standar */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff, #ccecff); /* Gradient Biru Muda Halus */
+    margin: 0;
+    padding: 40px 20px; /* Beri padding atas/bawah lebih */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Mulai dari atas jika konten tidak penuh */
+    min-height: 100vh;
+    color: #333; /* Warna teks default sedikit lebih gelap */
+    line-height: 1.6; /* Jarak antar baris lebih nyaman */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px; /* Sudut lebih tumpul */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Shadow lebih lembut dan menyebar */
+    width: 90%;
+    max-width: 1000px; /* Sedikit lebih lebar jika perlu */
+    animation: fadeIn 0.5s ease-out; /* Animasi muncul halus */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eef2f7; /* Border lebih halus */
+    flex-wrap: wrap; /* Agar responsif jika layar kecil */
+    gap: 15px; /* Jarak antar item header */
+}
+
+header h1 {
+    color: #1a2b4d; /* Biru Tua untuk judul utama */
+    margin: 0;
+    font-weight: 600; /* Sedikit lebih tebal */
+}
+
+/* Styling Umum untuk Tombol */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px; /* Sudut tombol sedikit tumpul */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500; /* Berat font medium */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.button:hover {
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow saat hover */
+}
+
+.button:active {
+    transform: translateY(0); /* Kembali ke posisi normal saat diklik */
+    box-shadow: none;
+}
+
+.button:focus {
+    outline: 2px solid #a8d8ff; /* Outline untuk aksesibilitas */
+    outline-offset: 2px;
+}
+
+/* Tombol di Header */
+header .button {
+    background-color: #007bff; /* Biru Primer */
+    color: white;
+}
+
+header .button:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+main h2 {
+    color: #1a2b4d; /* Konsisten dengan h1 */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    border-left: 4px solid #007bff; /* Aksen garis di kiri judul */
+    padding-left: 10px;
+}
+
+.actions {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Jarak antar tombol aksi */
+}
+
+/* Tombol Aksi Utama */
+.actions .primary {
+    background-color: #28a745; /* Hijau Segar */
+    color: white;
+}
+
+.actions .primary:hover {
+    background-color: #1e7e34; /* Hijau lebih gelap */
+}
+
+/* Tombol Aksi Sekunder */
+.actions .secondary {
+    background-color: #ffc107; /* Kuning */
+    color: #333; /* Teks gelap agar kontras */
+}
+
+.actions .secondary:hover {
+    background-color: #e0a800; /* Kuning lebih gelap */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Penting untuk border yang rapi */
+    margin-top: 25px;
+    background-color: #fff;
+    overflow: hidden; /* Agar border-radius container terluar terlihat */
+    border-radius: 8px; /* Radius sudut untuk tabel */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Shadow halus untuk tabel */
+}
+
+thead {
+    background-color: #f8f9fa; /* Latar header tabel sedikit abu */
+}
+
+thead th {
+    background-color: #e9ecef; /* Latar header lebih tegas */
+    color: #495057; /* Warna teks header */
+    font-weight: 600; /* Lebih tebal */
+    padding: 15px; /* Padding lebih besar */
+    text-align: left;
+    text-transform: uppercase; /* Judul kolom kapital */
+    letter-spacing: 0.5px; /* Sedikit jarak antar huruf */
+    border-bottom: 2px solid #dee2e6; /* Border bawah header lebih tebal */
+}
+
+th, td {
+    padding: 12px 15px; /* Padding sel */
+    text-align: left;
+    /* Menghilangkan border vertikal, hanya menyisakan horizontal */
+    border: none;
+    border-bottom: 1px solid #eef2f7; /* Border horizontal halus antar baris */
+}
+
+tbody tr {
+    transition: background-color 0.2s ease; /* Transisi hover halus */
+}
+
+/* Hilangkan border bottom pada baris terakhir */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fcfdff; /* Warna belang sangat halus */
+}
+
+tbody tr:hover {
+    background-color: #e9f5ff; /* Warna hover lebih jelas (biru muda) */
+}
+
+/* Styling untuk kolom Aksi di dalam tabel */
+tbody td.actions {
+    white-space: nowrap; /* Agar tombol tidak pindah baris */
+}
+
+tbody td.actions a {
+    display: inline-block;
+    padding: 6px 12px; /* Padding tombol aksi lebih kecil */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.85em; /* Font lebih kecil */
+    margin-right: 5px;
+    color: white; /* Warna teks putih default untuk tombol aksi */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+tbody td.actions a:hover {
+     transform: scale(1.05); /* Sedikit membesar saat hover */
+}
+
+tbody td.actions .edit-button {
+    background-color: #007bff; /* Biru */
+}
+
+tbody td.actions .edit-button:hover {
+    background-color: #0056b3;
+}
+
+tbody td.actions .delete-button {
+    background-color: #dc3545; /* Merah */
+}
+
+tbody td.actions .delete-button:hover {
+    background-color: #c82333;
+}
+
+.no-data {
+    color: #6c757d;
+    font-style: italic;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #eef2f7; /* Border lebih halus */
+    text-align: center;
+    color: #869ab8; /* Warna abu-abu kebiruan halus */
+    font-size: 0.9em;
+}
